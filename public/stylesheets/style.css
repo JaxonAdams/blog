@@ -3,6 +3,7 @@
     --color-secondary: #314455;
     --color-tertiary: #690505;
     --bg-primary: #FBFAF5;
+    --text-primary: #181A18;
 }
 
 html, body {
@@ -12,6 +13,7 @@ html, body {
     padding: 0;
     background-color: var(--bg-primary);
     color: var(--text-primary);
+    font-family: 'Lato', sans-serif;
 }
 
 header {
@@ -27,6 +29,55 @@ header {
     color: var(--text-primary);
     font-size: 3.5rem;
     padding-left: 1rem;
+}
+
+.homepage-heading {
+    width: 20vw;
+    text-align: center;
+    margin: 0 auto 1rem auto;
+    padding-bottom: 1.5rem;
+    font-size: 2rem;
+    border-bottom: 3px solid var(--color-tertiary);
+}
+
+.post-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    margin: 0 auto;
+    padding: 0;
+    border-bottom: 5px solid var(--color-secondary);
+    border-top: 5px solid var(--color-secondary);
+    margin-bottom: 1rem;
+    transition-property: border-bottom border-top padding-left background-color;
+    transition-duration: 1s;
+}
+
+.post-list:hover {
+    padding-left: 10vw;
+    background-color: var(--color-primary);
+    border-bottom: 5px solid var(--color-tertiary);
+    border-top: 5px solid var(--color-tertiary);
+}
+
+.post, .post a {
+    min-height: 20vh;
+    min-width: 70vw;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post a {
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.post-title {
+    font-size: 2rem;
 }
 
 footer {

@@ -1,1 +1,14 @@
-<div>Welcome to the homepage.</div>
+<h2 class="homepage-heading">Recent Posts</h2>
+{{#each posts as |post|}}
+<ul class="post-list">
+    <li class="post">
+        <a href="/post/{{post.id}}">
+            <div class="post-info">
+                <p class="post-date post-item">{{post.created_at}}</p>
+                <h2 class="post-title post-item">{{post.title}}</h2>
+            </div>
+            <p class="post-author post-item">By {{post.user.username}}</p>
+        </a>
+    </li>
+</ul>
+{{/each}}
