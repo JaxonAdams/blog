@@ -1,0 +1,37 @@
+<section>
+    <h2 class="dashboard-title"d>Create New Post</h2>
+
+    <form class="new-post-form">
+        <div class="post-form-input">
+            <label for="post-title">Title</label>
+            <input type="text" id="post-title" name="post-title" />
+        </div>
+        <div class="post-form-textarea">
+            <label for="post-content">Content</label>
+            <textarea id="post-content" name="post-content"></textarea>
+        </div>
+        <button type="submit" class="btn">Create</button>
+    </form>
+</section>
+{{#if posts.length}}
+<section>
+    <h2 class="dashboard-title dashboard-title-2">Your Posts</h2>
+    {{#each posts as |post|}}
+    <div class="dashboard-list-container">
+        <a href="/dashboard/edit/{{post.id}}" class="login-link edit-link">Edit Post Below</a>
+        <ul class="post-list">
+            <li class="post">
+                <a href="/post/{{post.id}}">
+                    <div class="post-info">
+                        <p class="post-date post-item">{{format_date post.created_at}}</p>
+                        <h2 class="post-title post-item">{{post.title}}</h2>
+                    </div>
+                    <p class="post-author post-item">By {{post.user.username}}</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    {{/each}}
+</section>
+{{/if}}
+<script src="/js/add-post.js"></script>

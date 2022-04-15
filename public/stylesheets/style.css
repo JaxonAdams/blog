@@ -112,7 +112,7 @@ nav {
     font-size: 2rem;
 }
 
-.login-form, .signup-form {
+.login-form, .signup-form, .new-post-form {
     width: 80%;
     min-height: 100%;
     margin: 0 auto;
@@ -123,12 +123,12 @@ nav {
     padding-bottom: 2rem;
 }
 
-.login-form div, .signup-form div {
+.login-form div, .signup-form div, .new-post-form div {
     margin: 1.5rem 0;
     font-size: 2rem;
 }
 
-.login-form div input, .signup-form div input {
+.login-form div input, .signup-form div input, .new-post-form div input {
     height: 2rem;
     font-size: 1.5rem;
 }
@@ -171,7 +171,7 @@ nav {
     text-align: center;
 }
 
-.comment-form {
+.comment-form, .new-post-form {
     display: flex;
     flex-direction: column;
     padding: 2rem;
@@ -179,10 +179,30 @@ nav {
     border-top: 5px solid var(--color-tertiary);
 }
 
-.comment-form textarea {
+.new-post-form {
+    border: none;
+    margin-top: 0;
+}
+
+.post-form-textarea, .post-form-input {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.post-form-textarea label, .post-form-input label {
+    margin-right: 1rem;
+}
+
+.comment-form textarea, .new-post-form textarea {
     width: 200px;
     height: 100px;
     resize: none;
+}
+
+.post-form-textarea textarea {
+    width: 500px;
 }
 
 .comment-form div {
@@ -192,7 +212,7 @@ nav {
     margin-top: .5rem;
 }
 
-.comment-form div button {
+.comment-form div button, .new-post-form button {
     height: 70px;
     width: 98px;
     font-size: 1.2rem;
@@ -222,6 +242,36 @@ nav {
     font-weight: bold;
 }
 
+.dashboard-title {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 5px solid var(--color-tertiary);
+}
+
+.dashboard-title-2 {
+    border-top: 5px solid var(--color-tertiary);
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.edit-link {
+    width: 20%;
+    padding: 1rem;
+    background-color: var(--color-secondary);
+    color: var(--bg-primary);
+    margin: 0 auto 1rem auto;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.dashboard-list-container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
 footer {
     position: absolute;
     bottom: 0;
@@ -240,6 +290,15 @@ footer {
 @media screen and (max-width: 800px) {
     .header-title a {
         font-size: 2.5rem;
+    }
+
+    .post-form-textarea textarea {
+        width: 300px;
+    }
+
+    .edit-link {
+        font-size: 1.2rem;
+        width: 40%;
     }
 
     footer {
