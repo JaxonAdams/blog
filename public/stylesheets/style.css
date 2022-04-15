@@ -128,9 +128,13 @@ nav {
     font-size: 2rem;
 }
 
-.login-form div input, .signup-form div input, .new-post-form div input {
+.login-form div input, .signup-form div input, .new-post-form div input, .edit-post-form div input {
     height: 2rem;
     font-size: 1.5rem;
+}
+
+.edit-post-form div input {
+    margin-bottom: 1.5rem;
 }
 
 .login-form div button, .signup-form div button {
@@ -171,7 +175,7 @@ nav {
     text-align: center;
 }
 
-.comment-form, .new-post-form {
+.comment-form, .new-post-form, .edit-post-form {
     display: flex;
     flex-direction: column;
     padding: 2rem;
@@ -179,7 +183,7 @@ nav {
     border-top: 5px solid var(--color-tertiary);
 }
 
-.new-post-form {
+.new-post-form, .edit-post-form {
     border: none;
     margin-top: 0;
 }
@@ -205,14 +209,14 @@ nav {
     width: 500px;
 }
 
-.comment-form div {
+.comment-form div, .edit-post-form div {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     margin-top: .5rem;
 }
 
-.comment-form div button, .new-post-form button {
+.comment-form div button, .new-post-form button, .edit-post-form button {
     height: 70px;
     width: 98px;
     font-size: 1.2rem;
@@ -220,6 +224,11 @@ nav {
     border: none;
     border-radius: 5px;
     background-color: var(--color-primary);
+}
+
+.edit-btn {
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .comments {
@@ -270,6 +279,14 @@ nav {
 .dashboard-list-container {
     display: flex;
     flex-flow: column wrap;
+}
+
+.edit-post {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
 }
 
 footer {

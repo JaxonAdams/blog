@@ -90,17 +90,26 @@ router.post('/', withAuth, (req, res) => {
 });
 
 // PUT update post /api/posts/1
-router.put('/upvote', withAuth,  (req, res) => {
-    // make sure the session exists first
-    if (req.session) {
-      // pass session id along with all destructured properties on req.body
-      Post.upvote({ ...req.body, user_id: req.session.user_id }, { Comment, User })
-        .then(updatedVoteData => res.json(updatedVoteData))
+router.put('/:id', withAuth, (req, res) => {
+    Post.update({
+        title: req.body.title
+    },
+    {
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbPostData => {
+            if (!dbPostData) {
+                res.status(404).json({ message: 'Post not found' });
+                return;
+            }
+            res.json({dbPostData});
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
-    }
 });
 
 // DELETE single post /api/posts/1
