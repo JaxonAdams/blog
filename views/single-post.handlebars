@@ -1,11 +1,13 @@
 <article class="post post-page-post">
     <div class="title">
         <h2 class="post-title">{{post.title}}</h2>
-        <h3 class="post-subtitle">By {{post.user.username}} on {{post.created_at}}</h3>
+        <h3 class="post-subtitle">By {{post.user.username}} on {{format_date post.created_at}}</h3>
     </div>
     <div class="content">
         <p class="post-content">{{post.content}}</p>
     </div>
+
+    {{#if loggedIn}}
     <form class="comment-form">
         <div>
             <textarea name="comment-body"></textarea>
@@ -15,6 +17,9 @@
             <button type="submit">Add Comment</button>
         </div>
     </form>
+    {{else}}
+    <h2>Please log in to post a comment.</h2>
+    {{/if}}
 
     <div class="comments">
         {{#each post.comments}}
@@ -29,3 +34,6 @@
         {{/each}}
     </div>
 </article>
+{{#if loggedIn}}
+<script src="/js/comment.js"></script>
+{{/if}}
