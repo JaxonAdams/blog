@@ -25,6 +25,8 @@ header {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    background-color: var(--bg-primary);
+    z-index: 3;
 }
 
 .header-title a {
@@ -138,6 +140,81 @@ nav {
     border: none;
 }
 
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    justify-content: center;
+    margin: 0 15vw;
+}
+
+.post-page-post {
+    border-bottom: 5px solid var(--color-tertiary);
+    padding-bottom: 10vh;
+}
+
+.post-title {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.post-subtitle {
+    font-size: 1.5rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-top: 5px solid var(--color-tertiary);
+}
+
+.comment-form textarea {
+    width: 20vw;
+    height: 15vh;
+    resize: none;
+}
+
+.comment-form div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin-top: .5rem;
+}
+
+.comment-form div button {
+    width: 8vw;
+    height: 4vh;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-primary);
+}
+
+.comments {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.comment {
+    margin: 1rem;
+    min-width: 50vw;
+    max-width: 50vw;
+    padding: .5rem;
+    font-size: 1.1rem;
+    border-top: 5px solid var(--color-secondary);
+    border-bottom: 5px solid var(--color-secondary);
+}
+
+.comment .meta {
+    font-style: italic;
+    font-weight: bold;
+}
+
 footer {
     position: absolute;
     bottom: 0;
@@ -149,4 +226,12 @@ footer {
     text-align: center;
     padding: .5rem;
     font-size: 1.2rem;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    footer {
+        display: none;
+    }
 }
