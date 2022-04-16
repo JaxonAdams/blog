@@ -318,6 +318,10 @@ footer {
         width: 40%;
     }
 
+    .post-content {
+        text-align: center;
+    }
+
     footer {
         display: none;
     }
