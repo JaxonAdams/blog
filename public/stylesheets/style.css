@@ -318,7 +318,7 @@ footer {
         width: 40%;
     }
 
-    .post-content {
+    .post-content, .post-title, .login-message {
         text-align: center;
     }
 
